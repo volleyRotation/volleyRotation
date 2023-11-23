@@ -1,43 +1,54 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>VBRotations</title>
+    <title>Rotations 5-1</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="src/js/snap.svg-min.js"></script>
+    <script src="src/js/vbCourts.js"></script>
+    <script src="src/js/vbTutorials.js"></script>
+    <script type="text/javascript">
+      let vbTutorialDiv
+      let langDivs
+
+      function clean (elem) {
+        while (elem.firstChild) {
+            elem.removeChild(elem.firstChild)
+        }
+      }
+
+      function createVBTutorial (lang) {
+        //window.history.replaceState(null, '', '5-1-rotation-system.html')
+        clean(vbTutorialDiv)
+        const vbTutorial = new VBTutorialServeReceieve({
+          language: lang,
+          width: 800
+        })
+        vbTutorialDiv.appendChild(vbTutorial.getSVG())
+        vbTutorial.draw()
+      }
+
+      window.onload = () => {
+        vbTutorialDiv = document.getElementById('vbTutorialDiv')
+        createVBTutorial('en')
+      }
+    </script>
   </head>
   <body>
     <header class="site-header">
-      <h1>VBRotations</h1>
+      <h1 id="titleH">Rotations 5-1</h1>
     </header>
     <section class="vbrotations">
+      <div class="container" id="vbTutorialDiv"></div>
       <div class="container">
-        <p>VBRotations is a Javascript based toolkit for creating interactive, animated diagrams of volleyball drills and situations.
-        These can be used as teaching aids for players, drill descriptions for coaches, playbooks for teams etc.</p>
-        <p>Below are some examples of things you can do with VBRotations:</p>
       </div>
     </section>
     <section class="notes">
       <div class="container">
-        <div style="width: 295px; display: inline-block; margin: auto">
-          <a href="examples/half-court-drill.html" target="_blank"><img src="img/half-court-drill.png" width="295px"/></a>
-          <br />
-          <p>A half court diagram of a simple drill</p>
-        </div>
-        <div style="width: 295px; display: inline-block; margin: auto">
-          <a href="examples/full-court-drill.html" target="_blank"><img src="img/full-court-drill.png" width="295px"/></a>
-          <br />
-          <p>A full court diagram of a defence scenario</p>
-        </div>
-        <div style="width: 295px; display: inline-block; margin: auto">
-          <a href="examples/5-1-rotation-system.html" target="_blank"><img src="img/5-1-rotation-tutorial.png" width="295px"/></a>
-          <br />
-          <p>A tutorial for a 5-1 rotation system</p>
-        </div>
-        <p>Documentation on how to use VBRotations is available <a href="https://github.com/monkeysppp/VBRotations">here</a>.</p>
-      </div>
+        <p id="descriptionP"></p>
       </div>
     </section>
     <footer class="footer">
-      <p>&nbsp;</p>
+      <p></p>
     </footer>
   </body>
 </html>
