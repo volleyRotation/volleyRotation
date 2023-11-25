@@ -16,11 +16,9 @@
         }
       }
 
-      function createVBTutorial (lang) {
-        //window.history.replaceState(null, '', '5-1-rotation-system.html')
+      function createVBTutorial () {
         clean(vbTutorialDiv)
         const vbTutorial = new VBTutorialServeReceieve({
-          language: lang,
           width: 800
         })
         vbTutorialDiv.appendChild(vbTutorial.getSVG())
@@ -29,7 +27,7 @@
 
       window.onload = () => {
         vbTutorialDiv = document.getElementById('vbTutorialDiv')
-        createVBTutorial('en')
+        createVBTutorial()
       }
     </script>
   </head>
