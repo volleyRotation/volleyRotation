@@ -17,6 +17,8 @@ class VBTutorial {
       playerOutlineColour: (config.colours && typeof config.colours.playerOutlineColour === 'string') ? config.colours.playerOutlineColour : '#f5f5f5',
       playerColour: (config.colours && typeof config.colours.playerColour === 'string') ? config.colours.playerColour : '#efa581',
       playerColourHighlight: (config.colours && typeof config.colours.playerColourHighlight === 'string') ? config.colours.playerColourHighlight : '#66dd66',
+      tutorialColour: (config.colours && typeof config.colours.tutorialColour === 'string') ? config.colours.tutorialColour : '#7ec485',
+      tutorialFade: (config.colours && typeof config.colours.tutorialFade === 'string') ? config.colours.tutorialFade : '#999999',
     }
     this.svg.svgRoot = document.createElementNS(this.NS, 'svg')
     this.svg.svgRoot.setAttribute('width', this.svg.width)
@@ -44,7 +46,194 @@ class VBTutorialServeReceieve extends VBTutorial {
       players: { s: 'Pa', o: 'Po', m2: 'C2', m1: 'C1', h1: 'A1', h2: 'A2', l: 'L'},
       rotationControl: { serving: 'Service', receiving: 'Réception', s1: 'Passeur en 1', s2: 'Passeur en 2', s3: 'Passeur en 3', s4: 'Passeur en 4', s5: 'Passeur en 5', s6: 'Passeur en 6' },
       actionControl: { servingBase: 'Base', serve: 'Service', set: 'Passe', switch: 'Changement', pass: 'Réception', attack: 'Attaque' },
+      tutorial: [
+        'Tutoriel',
+        'Suivant',
+        'C\'est un joueur. Cliquer dessus pour le mettre\n en évidence.\n\nA=Attaquant (4), C=Central, Pa=Passeur,\nPo=Pointu, L=Libero',
+        'C\'est le terrain avec les 6 joueurs.\nQuand vous cliquez sur les buttons,\nles joueurs vont bouger sur le terrain',
+        'Sélection des rotations. Cliquer sur un cercle\npour changer la rotation.\nChaque position est désigné par la position du\npasseur',
+        'Lorsque vous avez le service',
+        'Lorsque vous êtes en réception',
+        'Se déplacer de cercle en cerle vous fait\ntourner comme dans un match',
+        'Sélection des phases pendant le point.\nLes joueurs se déplacent alors sur le terrain',
+        'Positions des joueurs quand vous avez\nle service',
+        'Positions des joueurs quand vous êtes\nen réception',
+      ]
     }
+
+    this.tutorialData = [
+      {
+        boxPosition: {
+          left:   450 * this.svg.scale,
+          right:  650 * this.svg.scale,
+          top:    700 * this.svg.scale,
+          bottom: 890 * this.svg.scale,
+        },
+        textPosition: {
+          left:   700 * this.svg.scale,
+          right:  1320 * this.svg.scale,
+          top:    700 * this.svg.scale,
+          bottom: 920 * this.svg.scale,
+        },
+        text: this.text.tutorial[2],
+        nextPosition: {
+          left: 1080 * this.svg.scale,
+          top:  950 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   112 * this.svg.scale,
+          right:  988 * this.svg.scale,
+          top:    112 * this.svg.scale,
+          bottom: 986 * this.svg.scale,
+        },
+        textPosition: {
+          left:   1050 * this.svg.scale,
+          right:  1670 * this.svg.scale,
+          top:    400 * this.svg.scale,
+          bottom: 600 * this.svg.scale,
+        },
+        text: this.text.tutorial[3],
+        nextPosition: {
+          left: 1430 * this.svg.scale,
+          top:  650 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   1150 * this.svg.scale,
+          right:  1690 * this.svg.scale,
+          top:    50 * this.svg.scale,
+          bottom: 1070 * this.svg.scale,
+        },
+        textPosition: {
+          left:   480 * this.svg.scale,
+          right:  1100 * this.svg.scale,
+          top:    50 * this.svg.scale,
+          bottom: 270 * this.svg.scale,
+        },
+        text: this.text.tutorial[4],
+        nextPosition: {
+          left: 860 * this.svg.scale,
+          top:  300 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   1150 * this.svg.scale,
+          right:  1330 * this.svg.scale,
+          top:    50 * this.svg.scale,
+          bottom: 1070 * this.svg.scale,
+        },
+        textPosition: {
+          left:   480 * this.svg.scale,
+          right:  1100 * this.svg.scale,
+          top:    150 * this.svg.scale,
+          bottom: 350 * this.svg.scale,
+        },
+        text: this.text.tutorial[5],
+        nextPosition: {
+          left: 860 * this.svg.scale,
+          top:  400 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   1330 * this.svg.scale,
+          right:  1510 * this.svg.scale,
+          top:    50 * this.svg.scale,
+          bottom: 1070 * this.svg.scale,
+        },
+        textPosition: {
+          left:   480 * this.svg.scale,
+          right:  1100 * this.svg.scale,
+          top:    250 * this.svg.scale,
+          bottom: 450 * this.svg.scale,
+        },
+        text: this.text.tutorial[6],
+        nextPosition: {
+          left: 860 * this.svg.scale,
+          top:  500 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   1150 * this.svg.scale,
+          right:  1510 * this.svg.scale,
+          top:    50 * this.svg.scale,
+          bottom: 1070 * this.svg.scale,
+        },
+        textPosition: {
+          left:   480 * this.svg.scale,
+          right:  1100 * this.svg.scale,
+          top:    350 * this.svg.scale,
+          bottom: 550 * this.svg.scale,
+        },
+        text: this.text.tutorial[7],
+        nextPosition: {
+          left: 860 * this.svg.scale,
+          top:  600 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   10 * this.svg.scale,
+          right:  1110 * this.svg.scale,
+          top:    1120 * this.svg.scale,
+          bottom: 1570 * this.svg.scale,
+        },
+        textPosition: {
+          left:   90 * this.svg.scale,
+          right:  710 * this.svg.scale,
+          top:    880 * this.svg.scale,
+          bottom: 1080 * this.svg.scale,
+        },
+        text: this.text.tutorial[8],
+        nextPosition: {
+          left: 760 * this.svg.scale,
+          top:  1000 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   10 * this.svg.scale,
+          right:  1110 * this.svg.scale,
+          top:    1120 * this.svg.scale,
+          bottom: 1334 * this.svg.scale,
+        },
+        textPosition: {
+          left:   140 * this.svg.scale,
+          right:  760 * this.svg.scale,
+          top:    880 * this.svg.scale,
+          bottom: 1080 * this.svg.scale,
+        },
+        text: this.text.tutorial[9],
+        nextPosition: {
+          left: 810 * this.svg.scale,
+          top:  1000 * this.svg.scale,
+        },
+      },
+      {
+        boxPosition: {
+          left:   10 * this.svg.scale,
+          right:  1110 * this.svg.scale,
+          top:    1336 * this.svg.scale,
+          bottom: 1570 * this.svg.scale,
+        },
+        textPosition: {
+          left:   190 * this.svg.scale,
+          right:  810 * this.svg.scale,
+          top:    880 * this.svg.scale,
+          bottom: 1080 * this.svg.scale,
+        },
+        text: this.text.tutorial[10],
+        nextPosition: {
+          left: 860 * this.svg.scale,
+          top:  1000 * this.svg.scale,
+        },
+      },
+    ]
 
     this.court = new VBHalfCourt({
       width: (11/17) * this.svg.width
@@ -528,6 +717,7 @@ class VBTutorialServeReceieve extends VBTutorial {
     this.court.draw()
     this.drawRotationControl()
     this.drawActionControl()
+    this.drawTutorialButton()
   }
 
   multilineText (text, lineHeight, style) {
@@ -1061,6 +1251,121 @@ class VBTutorialServeReceieve extends VBTutorial {
     this.controlReceiveHit.attr({fill: this.colours.rotationControlBackgroundColourA})
     this.controlReceiveSwitch.attr({fill: this.colours.rotationControlBackgroundColourA})
     action.attr({fill: this.colours.rotationControlColour})
+  }
+
+  drawTutorialButton () {
+    const tutorialButtonBox = this.svg.snapRoot.rect(1410 * this.svg.scale , 1480 * this.svg.scale, 280 * this.svg.scale, 80 * this.svg.scale)
+    tutorialButtonBox.attr({
+      fill: this.colours.tutorialColour
+    })
+    const tutorialButtonText = this.svg.snapRoot.text(1550 * this.svg.scale, 1536 * this.svg.scale, this.text.tutorial[0])
+    tutorialButtonText.attr({
+      fill: this.colours.rotationControlColour,
+      stroke: this.colours.rotationControlColour,
+      strokeWidth: 2 * this.svg.scale,
+      'text-anchor':'middle',
+      'font-family': 'Verdana',
+      'font-size': 44 * this.svg.scale,
+    })
+
+    this.tutorialButton = this.svg.snapRoot.group(tutorialButtonBox, tutorialButtonText)
+    this.tutorialButton.attr({ cursor: 'pointer' })
+
+    this.tutorialButton.click(() => {
+      this.drawTutorial(0)
+    })
+  }
+
+  drawTutorial (index) {
+    if (index >= this.tutorialData.length) {
+      return
+    }
+
+    const p1 = this.svg.snapRoot.path("M0 0 H" + this.svg.width + "V" + this.svg.height + "H0Z " +
+      "M" + this.tutorialData[index].boxPosition.right + " " + this.tutorialData[index].boxPosition.top + " " +
+      "H" + this.tutorialData[index].boxPosition.left + "V" + this.tutorialData[index].boxPosition.bottom +
+      "H" + this.tutorialData[index].boxPosition.right + "Z")
+
+    this.tutorialMask = this.svg.snapRoot.group(p1)
+    this.tutorialMask.attr({
+      'fill-rule': 'evenodd',
+      'fill': this.colours.tutorialFade,
+      'fill-opacity': 0.8
+    })
+
+    this.tutorialMaskEdge = this.svg.snapRoot.rect(
+      this.tutorialData[index].boxPosition.left,
+      this.tutorialData[index].boxPosition.top,
+      this.tutorialData[index].boxPosition.right - this.tutorialData[index].boxPosition.left,
+      this.tutorialData[index].boxPosition.bottom - this.tutorialData[index].boxPosition.top
+    )
+    this.tutorialMaskEdge.attr({
+      stroke: this.colours.tutorialColour,
+      fill: 'none'
+    })
+
+    const textBox = this.svg.snapRoot.rect(
+      this.tutorialData[index].textPosition.left,
+      this.tutorialData[index].textPosition.top,
+      this.tutorialData[index].textPosition.right - this.tutorialData[index].textPosition.left,
+      this.tutorialData[index].textPosition.bottom - this.tutorialData[index].textPosition.top
+    )
+    textBox.attr({
+      fill: this.colours.tutorialColour
+    })
+
+    this.tutorialTextBox = this.svg.snapRoot.group(textBox)
+
+    const textChunks = this.tutorialData[index].text.split('\n')
+    for(var i = 0; i < textChunks.length; i++) {
+      const textLine = this.svg.snapRoot.text(this.tutorialData[index].textPosition.left + (10 * this.svg.scale),
+        this.tutorialData[index].textPosition.top + (42 * this.svg.scale) + (i * 40 * this.svg.scale),
+        textChunks[i])
+      textLine.attr({
+        fill: this.colours.rotationControlColour,
+        stroke: this.colours.rotationControlColour,
+        strokeWidth: 2  * this.svg.scale,
+        'text-anchor': 'left',
+        'font-family': 'Verdana',
+        'font-size': 32 * this.svg.scale,
+        cursor: 'pointer',
+      })
+      this.tutorialTextBox.add(textLine)
+    }
+
+    const nextButtonBox = this.svg.snapRoot.rect(
+      this.tutorialData[index].nextPosition.left,
+      this.tutorialData[index].nextPosition.top,
+      240 * this.svg.scale,
+      80 * this.svg.scale
+    )
+    nextButtonBox.attr({
+      fill: this.colours.tutorialColour
+    })
+    const nextButtonText = this.svg.snapRoot.text(this.tutorialData[index].nextPosition.left + 120 * this.svg.scale,
+      this.tutorialData[index].nextPosition.top + (56 * this.svg.scale),
+      this.text.tutorial[1]
+    )
+    nextButtonText.attr({
+      fill: this.colours.rotationControlColour,
+      stroke: this.colours.rotationControlColour,
+      strokeWidth: 2 * this.svg.scale,
+      'text-anchor':'middle',
+      'font-family': 'Verdana',
+      'font-size': 44 * this.svg.scale,
+      cursor: 'pointer',
+    })
+
+    this.tutorialNextButton = this.svg.snapRoot.group(nextButtonBox, nextButtonText)
+    this.tutorialNextButton.attr({ cursor: 'pointer' })
+
+    this.tutorialNextButton.click(() => {
+      this.tutorialMask.remove()
+      this.tutorialTextBox.remove()
+      this.tutorialNextButton.remove()
+      this.tutorialMaskEdge.remove()
+      this.drawTutorial(index+1)
+    })
   }
 
   move (players, time) {
