@@ -50,7 +50,7 @@ class VBTutorialServeReceieve extends VBTutorial {
         'Tutoriel',
         'Suivant',
         'C\'est un joueur. Cliquer dessus pour le mettre\n en évidence.\n\nA=Attaquant (4), C=Central, Pa=Passeur,\nPo=Pointu, L=Libero',
-        'C\'est le terrain avec les 6 joueurs.\nQuand vous cliquez sur les buttons,\nles joueurs vont bouger sur le terrain',
+        'C\'est le terrain avec les 6 joueurs.\nQuand vous cliquez sur les boutons,\nles joueurs vont bouger sur le terrain',
         'Sélection des rotations. Cliquer sur un cercle\npour changer la rotation.\nChaque position est désigné par la position du\npasseur',
         'Lorsque vous avez le service',
         'Lorsque vous êtes en réception',
