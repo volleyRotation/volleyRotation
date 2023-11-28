@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Rotations 5-1</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <script src="../src/js/snap.svg-min.js"></script>
+    <script src="../src/js/vbCourts.js"></script>
+    <script src="../src/js/vbTutorialsNoLibero.js"></script>
+    <script type="text/javascript">
+      let vbTutorialDiv
+
+      function clean (elem) {
+        while (elem.firstChild) {
+            elem.removeChild(elem.firstChild)
+        }
+      }
+
+      function createVBTutorial () {
+        clean(vbTutorialDiv)
+        const vbTutorial = new VBTutorialServeReceieveNoLibero({
+          width: 800
+        })
+        vbTutorialDiv.appendChild(vbTutorial.getSVG())
+        vbTutorial.draw()
+      }
+
+      window.onload = () => {
+        vbTutorialDiv = document.getElementById('vbTutorialDiv')
+        createVBTutorial()
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 id="titleH">Rotations 5-1 sans libero</h1>
+    </header>
+    <section class="vbrotations">
+      <div class="container" id="vbTutorialDiv"></div>
+      <div class="container">
+      </div>
+    </section>
+    <section class="notes">
+      <div class="container">
+        <p id="descriptionP"></p>
+      </div>
+    </section>
+    <footer class="footer">
+      <p></p>
+    </footer>
+  </body>
+</html>

@@ -1,52 +1,43 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Rotations 5-1</title>
+    <title>Rotations volley</title>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="src/js/snap.svg-min.js"></script>
-    <script src="src/js/vbCourts.js"></script>
-    <script src="src/js/vbTutorials.js"></script>
-    <script type="text/javascript">
-      let vbTutorialDiv
-      let langDivs
-
-      function clean (elem) {
-        while (elem.firstChild) {
-            elem.removeChild(elem.firstChild)
-        }
-      }
-
-      function createVBTutorial () {
-        clean(vbTutorialDiv)
-        const vbTutorial = new VBTutorialServeReceieve({
-          width: 800
-        })
-        vbTutorialDiv.appendChild(vbTutorial.getSVG())
-        vbTutorial.draw()
-      }
-
-      window.onload = () => {
-        vbTutorialDiv = document.getElementById('vbTutorialDiv')
-        createVBTutorial()
-      }
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   </head>
   <body>
     <header class="site-header">
-      <h1 id="titleH">Rotations 5-1</h1>
+      <h1>Rotations volley</h1>
     </header>
     <section class="vbrotations">
-      <div class="container" id="vbTutorialDiv"></div>
       <div class="container">
+        <p>Outil interactif qui permet de suivre les différentes étapes de la rotation 5-1. 
+          Il est possible de choisir la position du passeur, l'étape dans le jeu à la fois pour le service et la réception.
+        Un ou plusieurs postes peuvent également être mis en surbrillance en cliquant dessus afin de les suivre au fil des rotations.</p>
+        <p>Pour correspondre au mieux avec ce que l'on peut mettre en place, deux rotations sont possibles ci-dessous, avec et sans libero :</p>
       </div>
     </section>
     <section class="notes">
       <div class="container">
-        <p id="descriptionP"></p>
+        <i class="bi bi-1-square"></i> <a href="pages/rotation-libero.html">Rotations avec libero</a>
+      <br>
+      <br>
+      <i class="bi bi-2-square"></i> <a href="pages/rotation-sans-libero.html">Rotations sans libero</a>
+        <p>Les postes :
+          <ul>
+            <li>Pa : Passeur</li>
+            <li>Po : Pointu</li>
+            <li>L : Libero</li>
+            <li>A1 : Attaquant (4) 1</li>
+            <li>A2 : Attaquant (4) 2</li>
+            <li>C1 : Central 1</li>
+            <li>C2 : Central 2</li>
+          </ul>
+        </p>
       </div>
     </section>
     <footer class="footer">
-      <p></p>
+      <p>&nbsp;</p>
     </footer>
   </body>
 </html>

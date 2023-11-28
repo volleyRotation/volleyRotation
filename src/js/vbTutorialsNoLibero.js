@@ -1,5 +1,5 @@
 
-class VBTutorial {
+class VBTutorialNoLibero {
   NS = 'http://www.w3.org/2000/svg'
 
   constructor (config, heightScaleFactor, courtScaleFactor) {
@@ -29,7 +29,7 @@ class VBTutorial {
   }
 }
 
-class VBTutorialServeReceieve extends VBTutorial {
+class VBTutorialServeReceieveNoLibero extends VBTutorialNoLibero {
 
   constructor (config) {
     super(config, (16/17), (1/1700))
@@ -41,7 +41,7 @@ class VBTutorialServeReceieve extends VBTutorial {
     this.colours.rotationControlBackgroundColourB = (config.colours && typeof config.colours.rotationControlBackgroundColourB === 'string') ? config.colours.rotationControlBackgroundColourB : '#4596bf'
 
     this.text = {
-      players: { s: 'Pa', o: 'Po', m2: 'C2', m1: 'C1', h1: 'A1', h2: 'A2', l: 'L'},
+      players: { s: 'Pa', o: 'Po', m2: 'C2', m1: 'C1', h1: 'A1', h2: 'A2'},
       rotationControl: { serving: 'Service', receiving: 'Réception', s1: 'Passeur en 1', s2: 'Passeur en 2', s3: 'Passeur en 3', s4: 'Passeur en 4', s5: 'Passeur en 5', s6: 'Passeur en 6' },
       actionControl: { servingBase: 'Base', serve: 'Service', set: 'Passe', switch: 'Changement', pass: 'Réception', attack: 'Attaque' },
     }
@@ -61,8 +61,7 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 450, y: 100 },
           o:  { x: 200, y: 100 },
           h2: { x: 200, y: 600 },
-          l: { x: 450, y: 700 },
-          m1:  { x: -64, y: 700 }
+          m1:  { x: 450, y: 700 }
         },
         2: {
           m1: { x: 700, y: 600 },
@@ -71,16 +70,14 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 200, y: 100 },
           o:  { x: 200, y: 600 },
           h2: { x: 450, y: 700 },
-          l:  { x: -64, y: 700 }
         },
         3: {
           h2: { x: 700, y: 600 },
           m1: { x: 700, y: 100 },
           s:  { x: 450, y: 100 },
           h1: { x: 200, y: 100 },
-          l: { x: 200, y: 600 },
           o:  { x: 450, y: 700 },
-          m2:  { x: -64, y: 700 }
+          m2:  { x: 200, y: 600 }
         },
         4: {
           o:  { x: 700, y: 600 },
@@ -88,8 +85,7 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 450, y: 100 },
           s:  { x: 200, y: 100 },
           h1: { x: 200, y: 600 },
-          l: { x: 450, y: 700 },
-          m2:  { x: -64, y: 700 }
+          m2:  { x: 450, y: 700 }
         },
         5: {
           m2: { x: 700, y: 600 },
@@ -98,16 +94,14 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 200, y: 100 },
           s:  { x: 200, y: 600 },
           h1: { x: 450, y: 700 },
-          l:  { x: -64, y: 700 }
         },
         6: {
           h1: { x: 700, y: 600 },
           m2: { x: 700, y: 100 },
           o:  { x: 450, y: 100 },
           h2: { x: 200, y: 100 },
-          l: { x: 200, y: 600 },
           s:  { x: 450, y: 700 },
-          m1:  { x: -64, y: 700 }
+          m1:  { x: 200, y: 600 }
         }
       },
       servingServe: {
@@ -117,8 +111,7 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 450, y: 100 },
           o:  { x: 320, y: 100 },
           h2: { x: 200, y: 600 },
-          l: { x: 450, y: 700 },
-          m1:  { x: -64, y: 700 }
+          m1:  { x: 450, y: 700 }
         },
         2: {
           m1: { x: 700, y: 940 },
@@ -127,16 +120,14 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 320, y: 100 },
           o:  { x: 200, y: 600 },
           h2: { x: 450, y: 700 },
-          l:  { x: -64, y: 700 }
         },
         3: {
           h2: { x: 700, y: 940 },
           m1: { x: 580, y: 100 },
           s:  { x: 450, y: 100 },
           h1: { x: 320, y: 100 },
-          l: { x: 200, y: 600 },
-          o:  { x: 450, y: 700 },
-          m2:  { x: -64, y: 700 }
+          o:  { x: 700, y: 600 },
+          m2:  { x: 450, y: 700 }
         },
         4: {
           o:  { x: 700, y: 940 },
@@ -144,8 +135,7 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 450, y: 100 },
           s:  { x: 320, y: 100 },
           h1: { x: 200, y: 600 },
-          l: { x: 450, y: 700 },
-          m2:  { x: -64, y: 700 }
+          m2:  { x: 450, y: 700 }
         },
         5: {
           m2: { x: 700, y: 940 },
@@ -154,16 +144,14 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 320, y: 100 },
           s:  { x: 200, y: 600 },
           h1: { x: 450, y: 700 },
-          l:  { x: -64, y: 700 }
         },
         6: {
           h1: { x: 700, y: 940 },
           m2: { x: 580, y: 100 },
           o:  { x: 450, y: 100 },
           h2: { x: 320, y: 100 },
-          l: { x: 200, y: 600 },
-          s:  { x: 450, y: 700 },
-          m1:  { x: -64, y: 700 }
+          s:  { x: 700, y: 600 },
+          m1:  { x: 450, y: 700 }
         }
       },
       servingSwitch: {
@@ -172,54 +160,48 @@ class VBTutorialServeReceieve extends VBTutorial {
           h1: { x: 200, y: 100 },
           m2: { x: 450, y: 100 },
           o:  { x: 700, y: 100 },
-          h2: { x: 450, y: 700 },
-          l: { x: 200, y: 600 },
-          m1:  { x: -64, y: 700 }
+          h2: { x: 200, y: 600 },
+          m1:  { x: 450, y: 700 }
         },
         2: {
-          m1: { x: 200, y: 600 },
+          m1: { x: 450, y: 700 },
           s:  { x: 700, y: 100 },
           h1: { x: 200, y: 100 },
           m2: { x: 450, y: 100 },
           o:  { x: 700, y: 600 },
-          h2: { x: 450, y: 700 },
-          l:  { x: -64, y: 700 }
+          h2: { x: 200, y: 600 },
         },
         3: {
-          h2: { x: 450, y: 700 },
+          h2: { x: 200, y: 600 },
           m1: { x: 450, y: 100 },
           s:  { x: 700, y: 100 },
           h1: { x: 200, y: 100 },
-          l: { x: 200, y: 600 },
           o:  { x: 700, y: 600 },
-          m2:  { x: -64, y: 700 }
+          m2:  { x: 450, y: 700 }
         },
         4: {
           o:  { x: 700, y: 600 },
           h2: { x: 200, y: 100 },
           m1: { x: 450, y: 100 },
           s:  { x: 700, y: 100 },
-          h1: { x: 450, y: 700 },
-          l: { x: 200, y: 600 },
-          m2:  { x: -64, y: 700 }
+          h1: { x: 200, y: 600 },
+          m2:  { x: 450, y: 700 }
         },
         5: {
-          m2: { x: 200, y: 600 },
+          m2: { x: 450, y: 700 },
           o:  { x: 700, y: 100 },
           h2: { x: 200, y: 100 },
           m1: { x: 450, y: 100 },
           s:  { x: 700, y: 600 },
-          h1: { x: 450, y: 700 },
-          l:  { x: -64, y: 700 }
+          h1: { x: 200, y: 600 },
         },
         6: {
-          h1: { x: 450, y: 700 },
+          h1: { x: 200, y: 600 },
           m2: { x: 450, y: 100 },
           o:  { x: 700, y: 100 },
           h2: { x: 200, y: 100 },
-          l: { x: 200, y: 600 },
           s:  { x: 700, y: 600 },
-          m1:  { x: -64, y: 700 }
+          m1:  { x: 450, y: 700 }
         }
       },
       receivingBase: {
@@ -229,26 +211,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 450, y: 100 },
           o:  { x: 200, y: 100 },
           h2: { x: 200, y: 600 },
-          l:  { x: 450, y: 700 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 450, y: 700 }
         },
         2: {
-          l:  { x: 700, y: 600 },
           s:  { x: 700, y: 100 },
           h1: { x: 450, y: 100 },
           m2: { x: 200, y: 100 },
           o:  { x: 200, y: 600 },
           h2: { x: 450, y: 700 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 700, y: 600 }
         },
         3: {
           h2: { x: 700, y: 600 },
           m1: { x: 700, y: 100 },
           s:  { x: 450, y: 100 },
           h1: { x: 200, y: 100 },
-          l:  { x: 200, y: 600 },
           o:  { x: 450, y: 700 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 200, y: 600 }
         },
         4: {
           o:  { x: 700, y: 600 },
@@ -256,26 +235,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 450, y: 100 },
           s:  { x: 200, y: 100 },
           h1: { x: 200, y: 600 },
-          l:  { x: 450, y: 700 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 450, y: 700 }
         },
         5: {
-          l:  { x: 700, y: 600 },
           o:  { x: 700, y: 100 },
           h2: { x: 450, y: 100 },
           m1: { x: 200, y: 100 },
           s:  { x: 200, y: 600 },
           h1: { x: 450, y: 700 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 700, y: 600 }
         },
         6: {
           h1: { x: 700, y: 600 },
           m2: { x: 700, y: 100 },
           o:  { x: 450, y: 100 },
           h2: { x: 200, y: 100 },
-          l:  { x: 200, y: 600 },
           s:  { x: 450, y: 700 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 200, y: 600 }
         }
       },
       receivingPass: {
@@ -285,26 +261,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 150, y: 60  },
           o:  { x: 54,  y: 100 },
           h2: { x: 200, y: 600 },
-          l:  { x: 450, y: 700 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 450, y: 700 }
         },
         2: {
-          l: { x: 700, y: 600 },
           s:  { x: 700, y: 100 },
           h1: { x: 200, y: 600 },
           m2:  { x: 40, y: 160 },
           o:  { x: 260, y: 840 },
           h2: { x: 450, y: 700 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 700, y: 600 }
         },
         3: {
           h2: { x: 700, y: 600 },
           m1: { x: 740, y: 140 },
           s:  { x: 600, y: 100 },
           h1: { x: 200, y: 600 },
-          l:  { x: 450, y: 700 },
           o:  { x: 560, y: 820 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 450, y: 700 }
         },
         4: {
           o:  { x: 760, y: 820 },
@@ -312,26 +285,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 140, y: 140 },
           s:  { x: 60, y: 60 },
           h1: { x: 450, y: 700 },
-          l:  { x: 700, y: 600 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 700, y: 600 }
         },
         5: {
-          l: { x: 700, y: 600 },
           o:  { x: 840, y: 100 },
           h2: { x: 200, y: 600 },
           m1:  { x: 60, y: 60 },
           s:  { x: 350, y: 140 },
           h1: { x: 450, y: 700 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 700, y: 600 }
         },
         6: {
           h1: { x: 700, y: 600 },
           m2: { x: 700, y: 140 },
           o:  { x: 560, y: 60 },
           h2: { x: 200, y: 600 },
-          l:  { x: 450, y: 700 },
           s:  { x: 510, y: 170 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 450, y: 700 }
         }
       },
       receivingSet: {
@@ -341,26 +311,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 450, y: 300 },
           o:  { x: 0,   y: 300 },
           h2: { x: 450, y: 600 },
-          l:  { x: 400, y: 700 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 400, y: 700 }
         },
         2: {
-          l: { x: 700, y: 600 },
           s:  { x: 600, y: 100 },
           h1: { x: 0,   y: 300 },
           m2:  { x: 450, y: 300 },
           o:  { x: 850, y: 600 },
           h2: { x: 430, y: 600 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 700, y: 600 }
         },
         3: {
           h2: { x: 450, y: 600 },
           m1: { x: 450, y: 300 },
           s:  { x: 600, y: 100 },
           h1: { x: 0,   y: 300 },
-          l:  { x: 400, y: 700 },
           o:  { x: 850, y: 600 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 400, y: 700 }
         },
         4: {
           o:  { x: 850, y: 600 },
@@ -368,26 +335,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 450, y: 300 },
           s:  { x: 600, y: 100 },
           h1: { x: 450, y: 700 },
-          l:  { x: 700, y: 600 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 700, y: 600 }
         },
         5: {
-          l: { x: 700, y: 600 },
           o:  { x: 900, y: 300 },
           h2: { x: 0,   y: 300 },
           m1:  { x: 450, y: 300 },
           s:  { x: 600, y: 100 },
           h1: { x: 450, y: 600 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 700, y: 600 }
         },
         6: {
           h1: { x: 450, y: 600 },
           m2: { x: 450, y: 300 },
           o:  { x: 900, y: 300 },
           h2: { x: 0,   y: 300 },
-          l:  { x: 400, y: 700 },
           s:  { x: 600, y: 100 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 400, y: 700 }
         }
       },
       receivingAttack: {
@@ -397,26 +361,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m2: { x: 450, y: 100 },
           o:  { x: 100, y: 100 },
           h2: { x: 450, y: 300 },
-          l:  { x: 400, y: 700 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 400, y: 700 }
         },
         2: {
-          l: { x: 700, y: 600 },
           s:  { x: 600, y: 100 },
           h1: { x: 100, y: 100 },
           m2:  { x: 450, y: 100 },
           o:  { x: 840, y: 300 },
           h2: { x: 440, y: 300 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 700, y: 600 }
         },
         3: {
           h2: { x: 450, y: 300 },
           m1: { x: 450, y: 100 },
           s:  { x: 600, y: 100 },
           h1: { x: 100, y: 100 },
-          l:  { x: 450, y: 700 },
           o:  { x: 840, y: 300 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 450, y: 700 }
         },
         4: {
           o:  { x: 840, y: 300 },
@@ -424,26 +385,23 @@ class VBTutorialServeReceieve extends VBTutorial {
           m1: { x: 450, y: 100 },
           s:  { x: 600, y: 100 },
           h1: { x: 450, y: 700 },
-          l:  { x: 700, y: 600 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 700, y: 600 }
         },
         5: {
-          l: { x: 700, y: 600 },
           o:  { x: 800, y: 100 },
           h2: { x: 100, y: 100 },
           m1:  { x: 450, y: 100 },
           s:  { x: 600, y: 100 },
           h1: { x: 450, y: 300 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 700, y: 600 }
         },
         6: {
           h1: { x: 450, y: 300 },
           m2: { x: 450, y: 100 },
           o:  { x: 800, y: 100 },
           h2: { x: 100, y: 100 },
-          l:  { x: 400, y: 700 },
           s:  { x: 600, y: 100 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 400, y: 700 }
         }
       },
       receivingSwitch: {
@@ -452,54 +410,48 @@ class VBTutorialServeReceieve extends VBTutorial {
           h1: { x: 700, y: 100 },
           m2: { x: 450, y: 100 },
           o:  { x: 200, y: 100 },
-          h2: { x: 450, y: 700 },
-          l:  { x: 200, y: 600 },
-          m1: { x: -64, y: 700 }
+          h2: { x: 200, y: 600 },
+          m1: { x: 450, y: 700 }
         },
         2: {
-          l: { x: 200, y: 600 },
           s:  { x: 700, y: 100 },
           h1: { x: 200, y: 100 },
           m2:  { x: 450, y: 100 },
           o:  { x: 700, y: 600 },
-          h2: { x: 450, y: 700 },
-          m1: { x: -64, y: 700 }
+          h2: { x: 200, y: 600 },
+          m1: { x: 450, y: 700 }
         },
         3: {
-          h2: { x: 450, y: 700 },
+          h2: { x: 200, y: 600 },
           m1: { x: 450, y: 100 },
           s:  { x: 700, y: 100 },
           h1: { x: 200, y: 100 },
-          l:  { x: 200, y: 600 },
           o:  { x: 700, y: 600 },
-          m2: { x: -64, y: 700 }
+          m2: { x: 450, y: 700 }
         },
         4: {
           o:  { x: 700, y: 600 },
           h2: { x: 200, y: 100 },
           m1: { x: 450, y: 100 },
           s:  { x: 700, y: 100 },
-          h1: { x: 450, y: 700 },
-          l:  { x: 200, y: 600 },
-          m2: { x: -64, y: 700 }
+          h1: { x: 200, y: 600 },
+          m2: { x: 450, y: 700 }
         },
         5: {
-          l: { x: 200, y: 600 },
           o:  { x: 700, y: 100 },
           h2: { x: 200, y: 100 },
           m1:  { x: 450, y: 100 },
           s:  { x: 700, y: 600 },
-          h1: { x: 450, y: 700 },
-          m2: { x: -64, y: 700 }
+          h1: { x: 200, y: 600 },
+          m2: { x: 450, y: 700 }
         },
         6: {
-          h1: { x: 450, y: 700 },
+          h1: { x: 200, y: 600 },
           m2: { x: 450, y: 100 },
           o:  { x: 700, y: 100 },
           h2: { x: 200, y: 100 },
-          l:  { x: 200, y: 600 },
           s:  { x: 700, y: 600 },
-          m1: { x: -64, y: 700 }
+          m1: { x: 450, y: 700 }
         }
       },
     }
@@ -510,7 +462,6 @@ class VBTutorialServeReceieve extends VBTutorial {
       o: this.court.addPlayer(this.playerPositions.servingBase[2].o.x, this.playerPositions.servingBase[2].o.y, this.text.players.o),
       h2: this.court.addPlayer(this.playerPositions.servingBase[2].h2.x, this.playerPositions.servingBase[2].h2.y, this.text.players.h2),
       m2: this.court.addPlayer(this.playerPositions.servingBase[2].m2.x, this.playerPositions.servingBase[2].m2.y, this.text.players.m2),
-      l: this.court.addPlayer(this.playerPositions.servingBase[2].l.x, this.playerPositions.servingBase[2].l.y, this.text.players.l)
     }
 
     this.state = {
@@ -1072,7 +1023,6 @@ class VBTutorialServeReceieve extends VBTutorial {
     this.players.m1.setPosition(players.m1.x, players.m1.y)
     this.players.h1.setPosition(players.h1.x, players.h1.y)
     this.players.h2.setPosition(players.h2.x, players.h2.y)
-    this.players.l.setPosition(players.l.x, players.l.y)
 
     return this.court.draw()
   }
