@@ -49,9 +49,9 @@ class VBTutorialServeReceieveNoLibero extends VBTutorialNoLibero {
       tutorial: [
         'Tutoriel',
         'Suivant',
-        'C\'est un joueur. Cliquer dessus pour le mettre\n en évidence.\n\nA=Attaquant (4), C=Central, Pa=Passeur,\nPo=Pointu',
+        'C\'est un joueur. Cliquer dessus pour le\nmettre en évidence.\n\nA=Attaquant (4), C=Central, Pa=Passeur,\nPo=Pointu',
         'C\'est le terrain avec les 6 joueurs.\nQuand vous cliquez sur les boutons,\nles joueurs vont bouger sur le terrain',
-        'Sélection des rotations. Cliquer sur un cercle\npour changer la rotation.\nChaque position est désigné par la position du\npasseur',
+        'Sélection des rotations. Cliquer sur un\ncercle pour changer la rotation.\nChaque position est désigné par\nl\'emplacement du passeur',
         'Lorsque vous avez le service',
         'Lorsque vous êtes en réception',
         'Se déplacer de cercle en cerle vous fait\ntourner comme dans un match',
