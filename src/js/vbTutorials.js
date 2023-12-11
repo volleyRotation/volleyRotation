@@ -35,7 +35,12 @@ class VBTutorialServeReceieve extends VBTutorial {
 
   constructor (config) {
     super(config, (16/17), (1/1700))
-    this.svg.rotationControlCirleRadius = this.svg.width * (24 / 1700)
+
+    if (Math.min(window.screen.width, window.screen.height) < 768) {
+      this.svg.rotationControlCirleRadius = this.svg.width * (45 / 1700);
+    } else {
+      this.svg.rotationControlCirleRadius = this.svg.width * (24 / 1700);
+    }
 
     this.colours.rotationControlColour = (config.colours && typeof config.colours.rotationControlColour === 'string') ? config.colours.rotationControlColour : '#ffffff'
     this.colours.rotationControlHighlightColour = (config.colours && typeof config.colours.rotationControlHighlightColour === 'string') ? config.colours.rotationControlHighlightColour : '#dddddd'
